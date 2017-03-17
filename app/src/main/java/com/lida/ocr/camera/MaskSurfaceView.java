@@ -99,7 +99,7 @@ public class MaskSurfaceView extends FrameLayout {
 			
 			//绘制四周矩形阴影区域
 			rectPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-			rectPaint.setColor(Color.GRAY);
+			rectPaint.setColor(Color.DKGRAY);
 			rectPaint.setStyle(Style.FILL);
 			rectPaint.setAlpha(80);
 		}

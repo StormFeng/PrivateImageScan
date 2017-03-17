@@ -49,7 +49,7 @@ public class RectCameraActivity extends Activity implements OnCaptureCallback{
 		sb_zoom = (SeekBar) findViewById(R.id.sb_zoom);
 		
 //		设置矩形区域大小
-		this.surfaceview.setMaskSize(500, 150);
+		this.surfaceview.setMaskSize(800, 250);
 		
 //		拍照
 		btn_capture.setOnClickListener(new OnClickListener() {
@@ -143,6 +143,6 @@ public class RectCameraActivity extends Activity implements OnCaptureCallback{
 			this.imageView.setImageBitmap(BitmapFactory.decodeFile(filepath));
 			GetWordUtil.getCarNumber(this,filepath);
 		}
-		Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+//		Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
 	}
 }

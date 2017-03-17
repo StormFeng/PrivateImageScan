@@ -54,7 +54,6 @@ public class HttpMethods {
         map.put("detecttype","LocateRecognize");
         map.put("image",image);
         map.put("imagetype","1");
-        LogUtils.e(map);
         httpService.getResult("4ed43314cdba4fab72122331273d9fcb",map)
                 .subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())

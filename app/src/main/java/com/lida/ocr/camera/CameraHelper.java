@@ -47,6 +47,9 @@ public class CameraHelper {
 //	闪光灯模式(default：自动)
 	private String flashlightStatus = Camera.Parameters.FLASH_MODE_OFF;
 
+	private AutoFocusManager autoFocusManager;
+
+
 	public enum Flashlight{
 		AUTO, ON, OFF
 	}
@@ -329,6 +332,10 @@ public class CameraHelper {
 		if(this.camera!=null && this.isPreviewing){
 			this.camera.stopPreview();
 			this.isPreviewing = false;
+			if(autoFocusManager!=null){
+				autoFocusManager.stop();
+				autoFocusManager = null;
+			}
 		}
 	}
 	
@@ -338,7 +345,8 @@ public class CameraHelper {
 	public void startPreview(){
 		if(this.camera!=null){
 			this.camera.startPreview();
-			this.camera.autoFocus(null);
+//			this.camera.autoFocus(null);
+			autoFocusManager = new AutoFocusManager(camera);
 			this.isPreviewing = true;
 		}
 	}
